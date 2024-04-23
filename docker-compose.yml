@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  ruby:
+    container_name: ruby
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/morphome_parser
+#      - ./conf/my.cnf:/etc/mysql/conf.d/my.cnf
+#      - ./conf/mecabrc:/usr/lib64/mysql/mecab/etc/mecabrc
+    tty: true
+    environment:
+      TZ: 'Asia/Tokyo'
